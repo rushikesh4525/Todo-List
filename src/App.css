@@ -90,6 +90,7 @@ box-shadow: 0px 5px 7px rgb(39, 38, 38);
   
 }
 
+/* Style for All four Button */
 .button-area {
   margin-bottom: 15px;
   display: flex;
@@ -100,12 +101,6 @@ box-shadow: 0px 5px 7px rgb(39, 38, 38);
   margin-right: 10px;
   
 }
-
-
-
-
-
-
 
 .button-area > div> div {
   display: flex;
