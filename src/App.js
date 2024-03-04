@@ -6,17 +6,14 @@ import { BsCheckLg } from 'react-icons/bs';
 import Add from './components/Add/Add';
 
 function App() {
+
   const [allTodos, setTodos] = useState([]);
- 
   const [completedTodo, setCompletedTodo] = useState([]);
- 
   const [currentEdit, setCurrentEdit] = useState('');
   const [currentEditedItem, setCurrentEditedItem] = useState('');
   const [isCompleteScreen, setIsCompleteScreen]=useState(false);
 
-  // Existing code...
  //Handle Import data JSON API
-
  const importData = () => {
   fetch('https://jsonplaceholder.typicode.com/todos')
       .then(response => response.json())
@@ -55,7 +52,6 @@ const clearData = () => {
   setCompletedTodo([]);
 };
 
-
   const handleAddTodo = (title) => {
     let newTodoItem = { title };
     let updatedTodoArr = [...allTodos];
@@ -64,29 +60,28 @@ const clearData = () => {
     localStorage.setItem('todolist', JSON.stringify(updatedTodoArr));
   };
 
-  // Existing code...
-
+ 
   //To delete list
-const handleDeleteTodo=(index)=>{
+  const handleDeleteTodo=(index)=>{
   let reducedTodo =[...allTodos];
   reducedTodo.splice(index,1);    // remove item at specific index
 
   localStorage.setItem('todolist',JSON.stringify(reducedTodo));
   setTodos(reducedTodo);
 
-}
+  };
 
-//before use effects handle delete in completed
-const handleDeleteCompletedTodo=(index)=>{
+  //before use effects handle delete in completed
+  const handleDeleteCompletedTodo=(index)=>{
   let reducedTodo =[...completedTodo];
   reducedTodo.splice(index,1);    // remove item at specific index
 
   localStorage.setItem('completedTodo',JSON.stringify(reducedTodo));
   setCompletedTodo(reducedTodo);
-}
+  };
 
 
-// for local storage
+  // for local storage
   useEffect(()=>{
     let savedTodo= JSON.parse(localStorage.getItem('todolist'))
     let savedcompletedTodo= JSON.parse(localStorage.getItem('completedTodo'))
@@ -116,7 +111,7 @@ const handleDeleteCompletedTodo=(index)=>{
     setCompletedTodo(updatecompletedArr);
     handleDeleteTodo(index);
     localStorage.setItem('completedTodo',JSON.stringify(updatecompletedArr));
-  }
+  };
 
 
   //for handle edit
@@ -124,21 +119,21 @@ const handleDeleteCompletedTodo=(index)=>{
     setCurrentEdit(ind);
     setCurrentEditedItem(item);
 
-  }
+  };
   const handleUpdatetitle=(value)=>{
     setCurrentEditedItem((prev)=>{
       return {...prev, title:value}
     })
 
-  }
+  };
 
   //Edit Handle Button
-const handleUpdateTodo=()=>{
+  const handleUpdateTodo=()=>{
   let newToDo = [...allTodos];
   newToDo[currentEdit] = currentEditedItem;
   setTodos(newToDo);
   setCurrentEdit("");
-}
+  };
 
   return (
     <div className="App">
@@ -149,7 +144,7 @@ const handleUpdateTodo=()=>{
 
           {/* Button Toddo Completed and Import Data and Clear */}
 
-          <div className="button-area">
+  <div className="button-area">
   <div className="button-group">
     <button
       className={`secondaryBtn ${isCompleteScreen === false && 'active'}`}
