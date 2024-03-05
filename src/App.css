@@ -137,7 +137,7 @@ box-shadow: 0px 5px 7px rgb(39, 38, 38);
 
 
 .icon{
-  font-size: 25px;
+  font-size: 30px;
   cursor: pointer;
   
   
@@ -149,14 +149,15 @@ box-shadow: 0px 5px 7px rgb(39, 38, 38);
 
 
 .check-icon{
-  font-size: 25px;
+  font-size: 30px;
 
-  color:rgb(0,230,122);
+  color:rgb(97, 146, 126);
   cursor: pointer;
+  padding: 2px;
 }
 
 .check-icon:hover{
-  color: rgb(4, 196, 106);
+  color: rgb(3, 250, 135);
 }
 
 

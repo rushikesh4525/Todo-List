@@ -18,7 +18,7 @@ function App() {
   fetch('https://jsonplaceholder.typicode.com/todos')
       .then(response => response.json())
       .then(data => {
-          // Filter items based on completion status
+          // Filter 
           const todoItems = data.filter(item => !item.completed);
           const completedItems = data.filter(item => item.completed);
 
@@ -52,6 +52,7 @@ const clearData = () => {
   setCompletedTodo([]);
 };
 
+  //Add new Todo 
   const handleAddTodo = (title) => {
     let newTodoItem = { title };
     let updatedTodoArr = [...allTodos];
@@ -140,10 +141,9 @@ const clearData = () => {
       <h1>My To Do</h1>
       <div className="todo-wrapper">
         <Add addTodo={handleAddTodo} />
-        {/* Render the list of todos here */}
+       
 
-          {/* Button Toddo Completed and Import Data and Clear */}
-
+   {/* Button Toddo Completed and Import Data and Clear */}
   <div className="button-area">
   <div className="button-group">
     <button
